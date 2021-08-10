@@ -33,7 +33,7 @@ function clearFilter() {
 }
 
 function applyFilter() {
-  console.log('apllyFilter start');
+  //console.log('apllyFilter start');
 
   var m4;
   var m4Active;
@@ -44,6 +44,7 @@ function applyFilter() {
   var grauweiss;
   var grauweissActive;
 
+  // Filter Buttons
   m4 = document.getElementById('4m');
   m4Active = document.getElementById('4m_active');
   m8 = document.getElementById('8m');
@@ -53,16 +54,21 @@ function applyFilter() {
   grauweiss = document.getElementById('grauweiss');
   grauweissActive = document.getElementById('grauweiss_active');
 
+  // listen
+
   if (
     (window.getComputedStyle(m4Active).display === 'flex' &&
       window.getComputedStyle(m8Active).display === 'flex') ||
     window.getComputedStyle(m4x8Active).display === 'flex'
   ) {
-    console.log('filter größe active!');
-  }
-  if (window.getComputedStyle(grauweissActive).display === 'flex') {
-    console.log('filter farbe active!');
+    if (window.getComputedStyle(grauweissActive).display === 'flex') {
+      console.log('filter größe & farbe active!');
+    } else {
+      console.log('filter größe alleine active!');
+    }
+  } else if (window.getComputedStyle(grauweissActive).display === 'flex') {
+    console.log('filter farbe alleine active!');
   }
 
-  console.log('applyFilter end');
+  //console.log('applyFilter end');
 }
